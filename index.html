@@ -4,128 +4,183 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Our Team Section</title>
+    <title>Research Fellow</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js">
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
-        *{
+        * {
             padding: 0;
             margin: 0;
             box-sizing: border-box;
-            font-family: Poppins;
+            font-family: 'Poppins', sans-serif;
         }
-        .home-container{
+
+        body {
+            overflow: hidden;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #000;
+        }
+
+        .container {
+            position: relative;
+            width: 100%;
+            height: 100vh;
+        }
+
+        /* Glowing Circle */
+        .glowing-circle {
+            position: absolute;
+            width: 300px;
+            height: 300px;
+            background: linear-gradient(90deg, #335bf4 0%, #2ae9c9 100%);
+            filter: blur(50px);
+            border-radius: 50%;
+            pointer-events: none;
+            animation: glow-animation 2s infinite ease-in-out;
+            z-index: 0;
+        }
+
+        @keyframes glow-animation {
+            0% {
+                transform: scale(1);
+                opacity: 0.8;
+            }
+            50% {
+                transform: scale(1.2);
+                opacity: 1;
+            }
+            100% {
+                transform: scale(1);
+                opacity: 0.8;
+            }
+        }
+
+        .home-container {
+            position: relative;
             width: 100%;
             height: 100vh;
             display: flex;
             align-items: center;
             justify-content: center;
-            background-color: #0c52a1;
+            z-index: 2;
         }
-        .profile-card{
+
+        .profile-card {
             position: relative;
-            width: 220px;
-            height: 220px;
+            width: 250px;
+            height: 360px;
             background-color: #fff;
-            padding: 30px;
-            border-radius: 50%;
+            padding: 20px;
+            border-radius: 20px;
             box-shadow: -5px 8px 45px rgba(51, 51, 51, 0.126);
             transition: all .4s;
             margin: 0 20px;
+            overflow: hidden;
+            text-align: center;
         }
-        .profile-card:hover{
-            border-radius: 10px;
-            height: 260px;
+
+        .profile-card:hover {
+            transform: translateY(-10px);
         }
-        .profile-card .img{
-            position: relative;
+
+        .profile-card .img {
+            width: 100%;
+            height: 220px;
+            overflow: hidden;
+            border-radius: 15px;
+        }
+
+        .profile-card .img img {
             width: 100%;
             height: 100%;
+            object-fit: cover;
         }
-        .profile-card:hover img{
-            border-radius: 10px;
-            transform: translateY(-70px);
+
+        .caption {
+            margin-top: 15px;
         }
-        .img img{
-            object-fit: fill;
-            width: 100%;
-            border-radius: 50%;
-            transition: all .4s;
-            z-index: 99;
-        }
-        .caption{
-            text-align: center;
-            transform: translateY(-90px);
-            opacity: 0;
-            pointer-events: none;
-            transition: all .5s;
-        }
-        .profile-card:hover .caption{
-            opacity: 1;
-            pointer-events: all;
-        }
-        .caption h3{
+
+        .caption h3 {
             font-size: 21px;
             color: #0c52a1;
             font-weight: 600;
+            margin-bottom: 5px;
         }
-        .caption p{
+
+        .caption p {
             font-size: 15px;
             font-weight: 500;
-            margin: 2px 0 12px 0;
+            margin-bottom: 10px;
         }
-        .caption .social-links i{
+
+        .caption .social-links i {
             font-size: 21px;
-            margin: 0 3px;
+            margin: 0 5px;
             cursor: pointer;
             color: #333;
             transition: all .4s;
         }
-        .caption .social-links i:hover{
+
+        .caption .social-links i:hover {
             color: #0c52a1;
         }
     </style>
 </head>
-<body style="background-color: #0c52a1">
-<center><h1 style="padding-top: 100">Meet the Masterminds</h1></center>
-    <div class="home-container">
-        <div class="profile-card">
-            <div class="img">
-                <img src="ath.jpeg">
-            </div>
-            <div class="caption">
-                <h3>Atharva Barge</h3>
-                <p>Cyber Security Researcher</p>
-                <div class="social-links">
-                    <i class="fa-brands fa-facebook"></i>
+<body>
+    <div class="container">
+        <div class="glowing-circle"></div> <!-- Glowing circle -->
+        <div class="home-container">
+            <div class="profile-card">
+                <div class="img">
+                    <img src="ath.jpeg" alt="Atharva Barge">
+                </div>
+                <div class="caption">
+                    <h3>Atharva Barge</h3>
+                    <p>Cyber Security Researcher</p>
+                    <div class="social-links">
+                        <a href="https://linkedin.com/in/atharvasbarge"><i class="fa-brands fa-linkedin"></i></a>
+                        <a href="atharva/index.html"><i class="fa fa-globe"></i></a>
+                    </div>
                 </div>
             </div>
-        </div>
-        <div class="profile-card">
-            <div class="img">
-                <img src="shreya.jpeg">
-            </div>
-            <div class="caption">
-                <h3>Shreya Shivalkar</h3>
-                <p>Zoology Researcher</p>
-                <div class="social-links">
+            <div class="profile-card">
+                <div class="img">
+                    <img src="shreya.jpeg" alt="Shreya Shivalkar">
+                </div>
+                <div class="caption">
+                    <h3>Shreya Shivalkar</h3>
+                    <p>Zoology Researcher</p>
+                    <div class="social-links">
+                        <a href="https://linkedin.com/in/shreyashivalkar"><i class="fa-brands fa-linkedin"></i></a>
+                        <i class="fa fa-globe"></i>
+                    </div>
                 </div>
             </div>
-        </div>
-        <div class="profile-card">
-            <div class="img">
-                <img src="suyash.jpeg">
-            </div>
-            <div class="caption">
-                <h3>NotSuyesh Agate</h3>
-                <p>Zoology Researcher</p>
-                <div class="social-links">
-                    <i class="fa-brands fa-facebook"></i>
+            <div class="profile-card">
+                <div class="img">
+                    <img src="suyash.jpeg" alt="NotSuyesh Agate">
+                </div>
+                <div class="caption">
+                    <h3>NotSuyesh Agate</h3>
+                    <p>Zoology Researcher</p>
+                    <div class="social-links">
+                        <a href="https://in.linkedin.com/in/suyash-agate-b7331524b"><i class="fa-brands fa-linkedin"></i></a>
+                        <i class="fa fa-globe"></i>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-    
+    <script>
+        // Move the glowing circle with the mouse cursor
+        const glowingCircle = document.querySelector('.glowing-circle');
+        document.addEventListener('mousemove', (e) => {
+            glowingCircle.style.left = `${e.clientX - glowingCircle.offsetWidth / 2}px`;
+            glowingCircle.style.top = `${e.clientY - glowingCircle.offsetHeight / 2}px`;
+        });
+    </script>
 </body>
 </html>
