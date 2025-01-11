@@ -16,13 +16,13 @@
         }
 
         body {
-            overflow: hidden;
             min-height: 100vh;
             display: flex;
             align-items: center;
             justify-content: center;
             background-color: #000;
             flex-direction: column;
+            overflow-x: hidden;
         }
 
         h1 {
@@ -35,7 +35,6 @@
         .container {
             position: relative;
             width: 100%;
-            height: auto;
         }
 
         /* Glowing Circle */
@@ -75,12 +74,13 @@
             gap: 20px;
             z-index: 2;
             flex-wrap: wrap;
+            padding: 20px;
         }
 
         .profile-card {
             position: relative;
             width: 250px;
-            height: 360px;
+            height: auto;
             background-color: #fff;
             padding: 20px;
             border-radius: 20px;
@@ -146,7 +146,7 @@
 
             .home-container {
                 flex-direction: column;
-                gap: 15px;
+                gap: 20px;
             }
 
             .profile-card {
@@ -155,23 +155,15 @@
             }
 
             .profile-card .img {
-                height: 180px;
-            }
-
-            .caption h3 {
-                font-size: 18px;
-            }
-
-            .caption p {
-                font-size: 14px;
-            }
-
-            .caption .social-links a {
-                font-size: 18px;
+                height: auto;
             }
 
             .glowing-circle {
                 display: none; /* Hide glowing circle on small screens */
+            }
+
+            body {
+                overflow-y: auto;
             }
         }
     </style>
