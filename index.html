@@ -22,12 +22,20 @@
             align-items: center;
             justify-content: center;
             background-color: #000;
+            flex-direction: column;
+        }
+
+        h1 {
+            color: #fff;
+            font-size: 36px;
+            margin-bottom: 30px;
+            text-align: center;
         }
 
         .container {
             position: relative;
             width: 100%;
-            height: 100vh;
+            height: auto;
         }
 
         /* Glowing Circle */
@@ -61,11 +69,12 @@
         .home-container {
             position: relative;
             width: 100%;
-            height: 100vh;
             display: flex;
             align-items: center;
             justify-content: center;
+            gap: 20px;
             z-index: 2;
+            flex-wrap: wrap;
         }
 
         .profile-card {
@@ -116,7 +125,7 @@
             margin-bottom: 10px;
         }
 
-        .caption .social-links i {
+        .caption .social-links a {
             font-size: 21px;
             margin: 0 5px;
             cursor: pointer;
@@ -124,14 +133,52 @@
             transition: all .4s;
         }
 
-        .caption .social-links i:hover {
+        .caption .social-links a:hover {
             color: #0c52a1;
+        }
+
+        /* Media Query for Tablets and Mobile Devices */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 28px;
+                margin-bottom: 20px;
+            }
+
+            .home-container {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            .profile-card {
+                width: 90%;
+                max-width: 350px;
+            }
+
+            .profile-card .img {
+                height: 180px;
+            }
+
+            .caption h3 {
+                font-size: 18px;
+            }
+
+            .caption p {
+                font-size: 14px;
+            }
+
+            .caption .social-links a {
+                font-size: 18px;
+            }
+
+            .glowing-circle {
+                display: none; /* Hide glowing circle on small screens */
+            }
         }
     </style>
 </head>
 <body>
+    <h1>Meet the Masterminds</h1>
     <div class="container">
-        <h1>Meet the Masterminds</h1>
         <div class="glowing-circle"></div> <!-- Glowing circle -->
         <div class="home-container">
             <div class="profile-card">
@@ -142,7 +189,7 @@
                     <h3>Atharva Barge</h3>
                     <p>Cyber Security Researcher</p>
                     <div class="social-links">
-                        <a href="https://linkedin.com/in/atharvasbarge"><i class="fa-brands fa-linkedin"></i></a>
+                        <a href="https://linkedin.com/in/atharvasbarge" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
                         <a href="atharva/index.html"><i class="fa fa-globe"></i></a>
                     </div>
                 </div>
@@ -155,24 +202,11 @@
                     <h3>Shreya Shivalkar</h3>
                     <p>Zoology Researcher</p>
                     <div class="social-links">
-                        <a href="https://linkedin.com/in/shreyashivalkar"><i class="fa-brands fa-linkedin"></i></a>
+                        <a href="https://linkedin.com/in/shreyashivalkar" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
                         <a href="shreya/index.html"><i class="fa fa-globe"></i></a>
                     </div>
                 </div>
             </div>
-            <!-- <div class="profile-card">
-                <div class="img">
-                    <img src="suyash.jpeg" alt="NotSuyesh Agate">
-                </div>
-                <div class="caption">
-                    <h3>NotSuyesh Agate</h3>
-                    <p>Zoology Researcher</p>
-                    <div class="social-links">
-                        <a href="https://in.linkedin.com/in/suyash-agate-b7331524b"><i class="fa-brands fa-linkedin"></i></a>
-                        <i class="fa fa-globe"></i>
-                    </div>
-                </div>
-            </div> -->
         </div>
     </div>
     <script>
